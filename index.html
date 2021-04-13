@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arizona Dam Systems</title>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+
+    </head>
+
+    <body>
+        <div id="map" style="height: 500px"></div>
+
+        <script type="text/javascript">
+
+          var map = L.map('map', {
+              center: [34.0489, -111.0937],
+              zoom: 6.5
+          });
+
+          L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '@ <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+               maxZoom: 10,
+               minZoom: 4
+            }).addTo(map);
+
+            var damIcon = L.icon({
+                iconUrl: 'DAM.png',
+                iconSize:     [38, 38],
+                iconAnchor:   [19, 19],
+                popupAnchor:  [0, -10
+            ]});
+            //Major Dams
+            var marker1 = L.marker([36.56,-111.29], {icon: damIcon}).addTo(map); //GlencanyonDam
+            var marker2 = L.marker([33.4,-111.09], {icon: damIcon}).addTo(map);//TheodoreRooseveltDam
+            var marker3 = L.marker([32.42,-114.43], {icon: damIcon}).addTo(map);//MorelosDam
+            var marker4 = L.marker([33.49,-111.37], {icon: damIcon}).addTo(map);//BartlettDam
+            var marker5 = L.marker([35.16,-112.24], {icon: damIcon}).addTo(map);//AShForkSteelDam
+            var marker6 = L.marker([36.05,-114.44], {icon: damIcon}).addTo(map);//HooverDam
+              var marker7 = L.marker([33.17,-110.52], {icon: damIcon}).addTo(map);//CoolidgeDam
+              var marker8 = L.marker([34.2,-111.41], {icon: damIcon}).addTo(map);//ChildsIrvingHydroelectricDam
+
+          //Major Resoviors
+
+          var lakeIcon = L.icon({
+              iconUrl: 'lake.png',
+              iconSize:     [38, 38],
+              iconAnchor:   [19, 19],
+              popupAnchor:  [0, -10
+          ]});
+          var marker8 = L.marker([34.13, -113.36], {icon: lakeIcon}).addTo(map);// alamolake
+          var marker9 = L.marker([36.56, -111.29], {icon: lakeIcon}).addTo(map);//lake powell
+          var marker10 = L.marker([36.25, -114.36], {icon: lakeIcon}).addTo(map);//lake mead
+          var marker11 = L.marker([33.401, -111.094], {icon: lakeIcon}).addTo(map);//theodorerooslake
+          var marker12 = L.marker([33.49,-111.375], {icon: lakeIcon}).addTo(map);//bartlettlakeresovior
+          var marker13 = L.marker([34.13, -113.36], {icon: lakeIcon}).addTo(map);//
+
+            marker1.bindPopup('<p style="color:black; font-weight:bold"> Glen Canyon Dam </p>' + pic1);
+            marker2.bindPopup('<p style="color:black; font-weight:bold"> Theodore Roosevelt Dam </p>' + pic2);
+            marker3.bindPopup('<p style="color:black; font-weight:bold"> Morelos Dam </p>' + pic3);
+            marker4.bindPopup('<p style="color:black; font-weight:bold">Bartlett Dam </p>' + pic4);
+            marker5.bindPopup('<p style="color:black; font-weight:bold"> Ashfork Steel Dam </p>' + pic5);
+            marker6.bindPopup('<p style="color:black; font-weight:bold"> Hoover Dam </p>' + pic6);
+
+            var pic1 = '<img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Glen_Canyon_Dam_and_Bridge.JPG" alt="Glen Canyon Dam" width="250">';
+            var pic2 = '<img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Roosevelt_Dam%2C_Arizona.jpg" alt="Theodore Roosevelt Dam" width="250">';
+            var pic3 = '<img src="https://www.nationalgeographic.com/news/2014/3/140322-colorado-river-delta-pulse-flow-morelos-dam-minute-319-water/#/77899.jpg" alt="Morelos Dam" width "50" height "50">';
+            var pic4 = '<img src="https://en.wikipedia.org/wiki/Bartlett_Dam#/media/File:BartlettDam.jpg" alt="Bartlett Dam" width "50">';
+            var pic5 = '<img src="https://en.wikipedia.org/wiki/Ashfork-Bainbridge_Steel_Dam#/media/File:Ashfork-Bainbridge_Steel_Dam.JPG" alt="Ashfork Dam" width "50">'
+            var pic6 = '<img src="https://cdn.britannica.com/58/156458-050-68649A2F/Hoover-Dam-border-Colorado-River-Arizona-Nevada.jpg" alt="Hoover Dam" width "50">';
+
+            marker1.bindPopup(pic1), marker1.bindPopup("Glen Canyon Dam");
+            marker2.bindPopup(pic2);
+            marker3.bindPopup(pic3);
+            marker4.bindPopup(pic4);
+            marker5.bindPopup(pic5);
+
+
+
+        </script>
+   </body>
+</html>
